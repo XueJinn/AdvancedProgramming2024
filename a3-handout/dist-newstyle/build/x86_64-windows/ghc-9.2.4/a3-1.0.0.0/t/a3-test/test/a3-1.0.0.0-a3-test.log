@@ -1,0 +1,125 @@
+Test suite a3-test: RUNNING...
+Parsing
+  Constants
+    123:                                       OK
+     123:                                      OK
+    123 :                                      OK
+    123f:                                      OK
+    true:                                      OK
+    false:                                     OK
+  Basic operators
+    x+y:                                       OK
+    x-y:                                       OK
+    x*y:                                       OK
+    x/y:                                       OK
+    x**y:                                      OK
+    x == y:                                    OK
+  Operator priority
+    x+y+z:                                     OK
+    x+y-z:                                     OK
+    x+y*z:                                     OK
+    x*y*z:                                     OK
+    x/y/z:                                     OK
+    x+y**z:                                    OK
+    x**y**z:                                   OK
+    x==y+z:                                    OK
+    x==y*z:                                    OK
+    x==y/z:                                    OK
+    x==y**z:                                   OK
+    x*y**z:                                    OK
+    a+b*c-d/e**f:                              OK
+    (a+b)*(c-d):                               OK
+    a**b**c*d+e/f:                             OK
+    a==b+c*d-e/f**g:                           OK
+    a+b==c-d:                                  OK
+    (a+b)*c:                                   OK
+    a*(b+c):                                   OK
+    (a**b)**c:                                 OK
+    a**(b**c):                                 OK
+    a==b==c:                                   OK
+    f a + g b * h c:                           OK
+    f (a + b) * c:                             OK
+  Conditional expressions
+    if x then y else z:                        OK
+    if x then y else if x then y else z:       OK
+    if x then (if x then y else z) else z:     OK
+    1 + if x then y else z:                    OK
+    if x then y else if x then y else z:       OK
+  Lexing edge cases
+    2 :                                        OK
+     2:                                        OK
+  Function application
+    f x:                                       OK
+    f x y:                                     OK
+    f (x y):                                   OK
+    f x y z:                                   OK
+    f (x y) z:                                 OK
+    f (x (y z)):                               OK
+    f (g x) (h y):                             OK
+    (f x y) (g z):                             OK
+    f (x + y) (z * w):                         OK
+    f (if x then y else z) w:                  OK
+    f x + g y:                                 OK
+    f (x + y) * g z:                           OK
+    (f x) y:                                   OK
+    f (g (h x)):                               OK
+    f x y z):                                  OK
+    f (x y:                                    OK
+    f x y +:                                   OK
+    x if x then y else z:                      OK
+  Printing, putting, and getting
+    put x y:                                   OK
+    get x + y:                                 OK
+    getx:                                      OK
+    put (x + y) (z * 2):                       OK
+    put (get x) (y + 1):                       OK
+    put x (if y then 1 else 0):                OK
+    get (x + y) * z:                           OK
+    get (if x then y else z):                  OK
+    (get x) (get y):                           OK
+    put (get x) (get (y + 1)):                 OK
+    get (put x y):                             OK
+    print "result" (get (x + y) * 2):          OK
+    print "foo" x:                             OK
+    print "hello" 42:                          OK
+    print "result" (x + y):                    OK
+    print "calc" (f x y + z):                  OK
+    print "nested" (if x then y else z):       OK
+    print "getx" (get x):                      OK
+    print "putx" (put x y):                    OK
+    print x:                                   OK
+    print "unclosed:                           OK
+    print "unclosed:                           OK
+    print "extra" x y:                         OK
+    print ("dynamic" + "string") x:            OK
+    print "complex" (let x = 5 in x + y):      OK
+    print "lambda" (\x -> x + 1):              OK
+  Lambdas, let-binding and try-catch
+    \x -> x:                                   OK
+    \x -> x + 1:                               OK
+    \x -> \y -> x + y:                         OK
+    (\x -> x + 1) 5:                           OK
+    let x = 5 in x:                            OK
+    let x = 5 in x + y:                        OK
+    let x = 5 in let y = 6 in x + y:           OK
+    let f = \x -> x + 1 in f 5:                OK
+    try x catch y:                             OK
+    try (x + 1) catch (y - 1):                 OK
+    try (try x catch y) catch z:               OK
+    let x = try 5 catch 0 in \y -> x + y:      OK
+    \x -> let y = x + 1 in try y catch x:      OK
+    try (let x = 5 in x + 1) catch (\y -> y):  OK
+    let f = \x -> x + 1 in try (f 5) catch 0:  OK
+    \x -> try (if x then 1 else 0) catch 1:    OK
+    \x:                                        OK
+    let x = 5:                                 OK
+    try x:                                     OK
+    let let x = 5 in x:                        OK
+    \let -> x:                                 OK
+    let x = let y = 5 in y in x:               OK
+    try (try (try x catch y) catch z) catch w: OK
+    \x -> \y -> \z -> x + y + z:               OK
+
+All 111 tests passed (0.01s)
+Test suite a3-test: PASS
+Test suite logged to: E:\UCPH-Courses\AdvancedProgramming\2024\a3-handout\dist-newstyle\build\x86_64-windows\ghc-9.2.4\a3-1.0.0.0\t\a3-test\test\a3-1.0.0.0-a3-test.log

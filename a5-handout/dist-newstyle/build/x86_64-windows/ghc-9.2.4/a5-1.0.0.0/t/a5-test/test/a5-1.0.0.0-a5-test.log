@@ -1,0 +1,19 @@
+Test suite a5-test: RUNNING...
+APL properties
+  expCoverage:       OK (0.03s)
+    +++ OK, passed 3200 tests:
+    77.72% type error
+    75.00% no variable error
+    71.94% non-trivial variable
+    53.78% domain error
+    46.22% no domain error
+    25.00% variable error
+    22.28% no type error
+  onlyCheckedErrors: OK
+    +++ OK, passed 100 tests.
+  parsePrinted:      OK
+    +++ OK, passed 100 tests.
+
+All 3 tests passed (0.06s)
+Test suite a5-test: PASS
+Test suite logged to: E:\UCPH-Courses\AdvancedProgramming\2024\a5-handout\dist-newstyle\build\x86_64-windows\ghc-9.2.4\a5-1.0.0.0\t\a5-test\test\a5-1.0.0.0-a5-test.log
